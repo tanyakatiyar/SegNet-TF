@@ -25,7 +25,7 @@ class SegNet:
             print("No VGG path in config, so learning from scratch")
         else:
             self.vgg16_npy_path = self.config["VGG_FILE"]
-            self.vgg_param_dict = np.load(self.vgg16_npy_path, encoding='latin1').item()
+            self.vgg_param_dict = np.load(self.vgg16_npy_path, encoding='latin1',allow_pickle=TRUE).item()
             print("VGG parameter loaded")
 
         self.train_file = self.config["TRAIN_FILE"]
